@@ -4,7 +4,9 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='bl-home'),
-    path('about/', views.about, name='bl-about'),
-    path('marketplace/', views.marketplace, name='bl-marketplace'),  # Add this line
+    path('video/', views.video, name='bl-video'),
+    path('marketplace/', views.marketplace, name='bl-marketplace'),  
+    path('groups/', views.groups, name='bl-groups'),
+    path('gaming/', views.gaming, name='bl-gaming'),
 
 ]

@@ -9,6 +9,8 @@ class Post(models.Model):
     content = models.CharField(max_length=250, verbose_name="post_content")
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date_posted = models.DateTimeField(default=timezone.now)
+    image = models.ImageField(upload_to='post_images/', blank=True, null=True)  # Field for image upload
+
     
     def __str__(self):
         return self.title

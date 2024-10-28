@@ -1,6 +1,4 @@
-{% extends "fbclone/base.html" %}
-{% block content %}
-<div class="container-fluid gedf-wrapper">
+{% extends "fbclone/base.html" %} {% block content %} {% load static %} <div class="container-fluid gedf-wrapper">
     <div class="row">
         <div class="col-md-3">
             <div class="card">
@@ -22,9 +20,7 @@
                 </ul>
             </div>
         </div>
-
         <div class="col-md-6 gedf-main">
-
             <!--- \\\\\\\Post-->
             <div class="card gedf-card">
                 <div class="card-header">
@@ -44,7 +40,6 @@
                                 <label class="sr-only" for="message">post</label>
                                 <textarea class="form-control" id="message" rows="3" placeholder="What are you thinking?"></textarea>
                             </div>
-
                         </div>
                         <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
                             <div class="form-group">
@@ -61,8 +56,7 @@
                             <button type="submit" class="btn btn-primary">Post</button>
                         </div>
                         <div class="btn-group">
-                            <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                            <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-globe"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
@@ -73,43 +67,234 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Post /////-->
-            {% for post in posts %}
-            <!--- \\\\\\\Post-->
-            <div class="card gedf-card mt-3">
-                <div class="card-header">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="mr-2">
-                                <img class="rounded-circle" width="45" src="https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/363450218_1281985212689285_8430281929240115866_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=-D0eKSRYf5UQ7kNvgHLj5mX&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=AFzp6YzPCka60GwGsD2Fr3q&oh=00_AYDD37KW4I35StciWkl6SJAi5ZI_JGec2gWPx8AosY1lCA&oe=670DBD0D" alt="">
-                            </div>
-                                <div class="ml-2">
-                                    <div class="h5 m-0">{{ post.author }}</div>
+            </div><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 layout-spacing">
+                        <div class="statbox widget box box-shadow">
+                            <div class="widget-header">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    </div>
                                 </div>
                             </div>
-                        <div>
-                        <div class="dropdown">
-                            <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-ellipsis-h"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                                <div class="h6 dropdown-header">Configuration</div>
-                                <a class="dropdown-item" href="#">Save</a>
-                                <a class="dropdown-item" href="#">Hide</a>
-                                <a class="dropdown-item" href="#">Report</a>
+                            <div class="widget-content widget-content-area">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div id="content_1" class="tabcontent story-area">
+                                            <div class="story-container-1">
+                                                <div class="single-create-story">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="single-create-story-bg">
+                                                    <div class="create-story-author">
+                                                        <i class="fa fa-plus-circle fa-2x text-info"></i>
+                                                        <p>Create a story</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single-story">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="single-story-bg">
+                                                    <div class="story-author">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png">
+                                                        <p>John</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single-story">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="single-story-bg">
+                                                    <div class="story-author">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png">
+                                                        <p>Mike</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single-story">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="single-story-bg">
+                                                    <div class="story-author">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png">
+                                                        <p>Lisa</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single-story">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="single-story-bg">
+                                                    <div class="story-author">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar5.png">
+                                                        <p>William</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single-story">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="single-story-bg">
+                                                    <div class="story-author">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
+                                                        <p>Jonthy</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single-story">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="single-story-bg">
+                                                    <div class="story-author">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png">
+                                                        <p>Steve</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single-story">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar8.png" class="single-story-bg">
+                                                    <div class="story-author">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar8.png">
+                                                        <p>Jenni</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single-story">
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="single-story-bg">
+                                                    <div class="story-author">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                                                        <p>Sagarika</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        
             </div>
-            <div class="card-body">
-                <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> {{ post.date_posted }}</div>
+            <style>
+                .widget {
+                    padding: 0;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    border-radius: 6px;
+                    -webkit-box-shadow: 0 4px 6px 0 rgb(85 85 85 / 8%), 0 1px 20px 0 rgb(0 0 0 / 7%), 0px 1px 11px 0px rgb(0 0 0 / 7%);
+                    -moz-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
+                    box-shadow: 0 4px 6px 0 rgb(85 85 85 / 8%), 0 1px 20px 0 rgb(0 0 0 / 7%), 0px 1px 11px 0px rgb(0 0 0 / 7%);
+                }
+
+                .widget-content-area {
+                    padding: 10px;
+                    position: relative;
+                    background-color: #fff;
+                    border-bottom-left-radius: 6px;
+                    border-bottom-right-radius: 6px;
+                }
+
+                .story-container-1 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+
+                .story-container-1 .single-create-story {
+                    height: 175px;
+                    width: 110px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    position: relative;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                    background: #e4e4e4;
+                    text-align: center;
+                }
+
+                img.single-create-story-bg {
+                    width: 100%;
+                    height: 120px;
+                    object-fit: cover;
+                }
+
+                .create-story-author img {
+                    height: 40px;
+                    width: 40px;
+                    margin-top: -20px;
+                    padding: 4px;
+                    background: #e4e4e4;
+                    border-radius: 50%;
+                }
+
+                .story-container-1 .single-story {
+                    height: 175px;
+                    width: 110px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    position: relative;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                }
+
+                .story-container-1 .single-story::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    background-image: linear-gradient(rgb(255 0 0 / 0%), black);
+                }
+
+                img.single-story-bg {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .story-container-1 .story-author {
+                    position: absolute;
+                    top: 50%;
+                    left: 0px;
+                    transform: translateY(-50%);
+                    right: 0px;
+                    text-align: center;
+                    z-index: 99;
+                    cursor: pointer;
+                }
+
+                .story-author img {
+                    height: 60px;
+                    width: 60px;
+                    border-radius: 50%;
+                    border: 1px solid white;
+                    padding: 4px;
+                }
+
+                .story-container-1 .story-author p {
+                    color: #fff;
+                    width: 100%;
+                    margin: 5px 0px 0px 0px;
+                    font-weight: 600;
+                    font-size: 12px;
+                }
+
+                .create-story-author p {
+                    margin: 0px;
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+            </style>
+            <!-- Post /////--> {% for post in posts %}
+            <!--- \\\\\\\Post-->
+            <div class="card gedf-card mt-3">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center"> {% if post.image %} <img class="rounded-circle" width="45" height="45" src="{{ post.image.url }}" alt="{{ post.author }}" style="object-fit: cover;"> {% else %} <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt=""> {% endif %} <div class="ml-2">
+                                <div class="h5 m-0">{{ post.author }}</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dropdown">
+                                <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                                    <div class="h6 dropdown-header">Configuration</div>
+                                    <a class="dropdown-item" href="#">Save</a>
+                                    <a class="dropdown-item" href="#">Hide</a>
+                                    <a class="dropdown-item" href="#">Report</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> {{ post.date_posted }}</div>
                     <a class="card-link" href="#">
                         <h5 class="card-title">{{ post.title }}</h5>
                     </a>
-        
                     <p class="card-text">
                         {{ post.content }}
                     </p>
@@ -120,31 +305,50 @@
                     <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
                 </div>
             </div>
-            <!-- Post /////-->
-            {% endfor %}
-
-
+            <!-- Post /////--> {% endfor %}
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2.8">
             <div class="card gedf-card">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-            <div class="card gedf-card mt-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 2 title</h5>
-                        <p class="card-text">Sample post.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                    <h5 class="card-title">Contacts</h5>
+                    <div class="list-group">
+                        <!-- Contact Item -->
+                        <div class="list-group-item d-flex align-items-center border-0">
+                            <img src="{% static 'images/lebron.jpg' %}" alt="Lebron Tan" class="rounded-circle mr-3" width="45" height="45">
+                            <span><strong>Lebron Tan</strong></span>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border-0">
+                            <img src="{% static 'images/dwight.png' %}" alt="Dwight Tristan Pajaron" class="rounded-circle mr-3" width="45" height="45">
+                            <span><strong>Dwight Tristan Pajaron</strong></span>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border-0">
+                            <img src="{% static 'images/john.jpg' %}" alt="Vickylou Bustamante" class="rounded-circle mr-3" width="45" height="45">
+                            <span><strong>John Jacob Cantil</strong></span>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border-0">
+                            <img src="{% static 'images/rhon.png' %}" alt="Rhon Juztine Roqueño" class="rounded-circle mr-3" width="45" height="45">
+                            <span><strong>Rhon Juztine Roqueño</strong></span>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border-0">
+                            <img src="{% static 'images/hans.jpg' %}" alt="hans" class="rounded-circle mr-3" width="45" height="45">
+                            <span><strong>Hans Fred Recafort</strong></span>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border-0">
+                            <img src="{% static 'images/jb.jpg' %}" alt="jb" class="rounded-circle mr-3" width="45" height="45">
+                            <span><strong>Jb Sucal</strong></span>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border-0">
+                            <img src="{% static 'images/pb.jpg' %}" alt="pb" class="rounded-circle mr-3" width="45" height="45">
+                            <span><strong>Phoebe Kirsten Oiga</strong></span>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center border-0">
+                            <img src="{% static 'images/csar.jpg' %}" alt="csar" class="rounded-circle mr-3" width="45" height="45">
+                            <span><strong>Ceasar Escandor</strong></span>
+                        </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>
-{% endblock %}
+</div> {% endblock %}
