@@ -2,6 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
+
+
+
 
 
 # Create your views here.
@@ -34,3 +39,21 @@ def home(request):
     posts = Post.objects.all().order_by('-date_posted')  # Order by the date posted
     return render(request, 'fbclone/home.html', {'posts': posts})
 
+def logout_view(request):
+    logout(request)
+    return render(request, 'user/logout.html')
+@login_required
+def video(request):
+    return render(request, 'fbclone/video.html')
+
+@login_required
+def marketplace(request):
+    return render(request, 'fbclone/marketplace.html')
+
+@login_required
+def groups(request):
+    return render(request, 'fbclone/groups.html')
+
+@login_required
+def gaming(request):
+    return render(request, 'fbclone/gaming.html')

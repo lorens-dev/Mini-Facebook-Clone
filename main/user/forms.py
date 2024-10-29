@@ -6,7 +6,9 @@ class UserRegisterForm(UserCreationForm):
     email = forms.EmailField(required=True)
     first_name = forms.CharField()
     last_name = forms.CharField()
+    profile_picture = forms.ImageField(required=False)
     
     class Meta:
         model = User
-        fields = [ 'first_name', 'last_name', 'username', 'email', 'password1', 'password2']
+        fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
+

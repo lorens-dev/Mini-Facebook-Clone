@@ -1,25 +1,21 @@
 {% extends "fbclone/base.html" %} {% block content %} {% load static %} <div class="container-fluid gedf-wrapper">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="h5">@Lorens Bustamante</div>
-                    <div class="h7 text-muted">Fullname : Lorens M. Bustamante</div>
-                    <div class="h7">SPUS IT STUDENT</div>
+    
+    
+    <br>
+    <div class="container-fluid gedf-wrapper">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="h5">@{{ user.username }}</div>
+                        <div class="h7 text-muted">Fullname: {{ user.first_name }} {{ user.last_name }}</div>
+                    </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <div class="h6 text-muted">Followers</div>
-                        <div class="h5">10k</div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="h6 text-muted">Following</div>
-                        <div class="h5">0</div>
-                    </li>
-                    <li class="list-group-item">Junior Dev</li>
-                </ul>
             </div>
-        </div>
+
+
+
+
         <div class="col-md-6 gedf-main">
             <!--- \\\\\\\Post-->
             <div class="card gedf-card">

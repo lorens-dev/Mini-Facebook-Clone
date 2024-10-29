@@ -9,11 +9,15 @@
                 </div>
             {% endfor %}
         {% endif %}
-        <form method = "POST">
+        <form method="POST" enctype="multipart/form-data">  <!-- Include enctype for file upload -->
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottm mb-4">Register Now</legend>
+                <legend class="border-bottom mb-4">Register Now</legend>
                 {{ form|crispy }}
+                <div class="form-group">
+                    <label>Profile Picture</label>
+                    {{ form.profile_picture|crispy }}  <!-- Render the profile picture field -->
+                </div>
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Sign Up</button>
