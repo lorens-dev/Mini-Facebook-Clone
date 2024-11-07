@@ -21,15 +21,21 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from user import views as user_views
 
-
+# URL patterns for the project
 urlpatterns = [
+    # Path for the admin site
     path('admin/', admin.site.urls),
+    
+    # Include the URLs for the 'fbclone' app
     path('', include('fbclone.urls')),  # Include fbclone app URLs
+    
+    # User registration URL, points to the 'register' view in the user app
     path('register/', user_views.register, name='register'),  # User registration URL
+    
+    # Login URL, using Django's built-in LoginView and custom template for the login page
     path('login/', auth_views.LoginView.as_view(template_name='user/login.html'), name='login'),   ##Login
+    
+    # Profile URL, points to the 'profile' view in the user app
     path('profile/', user_views.profile, name='profile'), ##Profile
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Serve media files during development
