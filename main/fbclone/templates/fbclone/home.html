@@ -78,70 +78,83 @@
             </div>
         </div>
         {% endif %} 
-<!--post section-->
-        {% if user.is_authenticated %}
-        <div class="col-md-6 gedf-main">
-            <div class="card gedf-card">
-                <div class="card-header">
-                    <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">What's on your mind?</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="card-body">
-                    <div class="content-section">
-                        <div class="btn-group">
-                            <a class="btn btn-primary" href="{% url 'post-create' %}">Create Post</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {% for post in posts %}
-            <div class="card gedf-card mt-3">
-                <div class="card-header">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center">
-                            {% if post.author.profile.image %}
-                            <img class="rounded-circle mr-2" style="width: 45px; height: 45px; object-fit: cover;" src="{{ post.author.profile.image.url }}" alt=""> {% else %}
-                            <img class="rounded-circle mr-2" style="width: 45px; height: 45px; object-fit: cover;" src="{% static 'default_image.jpg' %}" alt=""> {% endif %}
-                            <div class="h5 m-0">{{ post.author }}</div>
-                        </div>
-                        <div class="dropdown">
-                            <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-ellipsis-h"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                                <div class="h6 dropdown-header">Configuration</div>
-                                <a class="dropdown-item" href="#">Save</a>
-                                <a class="dropdown-item" href="#">Hide</a>
-                                <a class="dropdown-item" href="#">Report</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-body">
-                    <div class="text-muted h7 mb-2">
-                        <i class="fa fa-clock-o"></i> {{ post.date_posted }}
-                    </div>
-                    <a class="card-link" href="{% url 'post-detail' post.id %}">
-                        <h5 class="card-title">{{ post.title }}</h5>
-                    </a>
-                    <p class="card-text">{{ post.content }}</p>
-                </div>
-
-                <div class="card-footer">
-                    <a href="#" class="card-link"><i class="fa fa-thumbs-up"></i> Like</a>
-                    <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
-                    <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
-                </div>
-            </div>
-            {% endfor %}
+  <!-- Post Section -->
+  <div class="col-md-6 gedf-main">
+    <div class="card gedf-card">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">What's on your mind?</a>
+                </li>
+            </ul>
         </div>
-        {% endif %}
-<!--end post-->
+        <div class="card-body">
+            <div class="content-section">
+                <div class="btn-group">
+                    <a class="btn btn-primary" href="{% url 'post-create' %}">Create Post</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% for post in posts %}
+        <div class="card gedf-card mt-3">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        {% if post.author.profile.image %}
+                            <img class="rounded-circle mr-2" style="width: 45px; height: 45px; object-fit: cover;" src="{{ post.author.profile.image.url }}" alt="">
+                        {% else %}
+                            <img class="rounded-circle mr-2" style="width: 45px; height: 45px; object-fit: cover;" src="{% static 'default_image.jpg' %}" alt="">
+                        {% endif %}
+                        <div class="h5 m-0">{{ post.author }}</div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-ellipsis-h"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                            <div class="h6 dropdown-header">Configuration</div>
+                            <a class="dropdown-item" href="#">Save</a>
+                            <a class="dropdown-item" href="#">Hide</a>
+                            <a class="dropdown-item" href="#">Report</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="text-muted h7 mb-2">
+                    <i class="fa fa-clock-o"></i> {{ post.date_posted }}
+                </div>
+                <a class="card-link" href="{% url 'post-detail' post.id %}">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                </a>
+                <p class="card-text">{{ post.content }}</p>
+
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="Post Image" class="img-fluid mt-3" style="max-height: 300px; object-fit: cover;">
+                {% endif %}
+                {% if post.video %}
+                    <video width="320" height="240" controls>
+                        <source src="{{ post.video.url }}" type="video/mp4">
+                        <source src="{{ post.video.url }}" type="video/webm">
+                        <source src="{{ post.video.url }}" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                {% endif %}
+            </div>
+
+            <div class="card-footer">
+                <a href="#" class="card-link"><i class="fa fa-thumbs-up"></i> Like</a>
+                <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
 
         <br> 
         {% if user.is_authenticated %}

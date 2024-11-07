@@ -11,6 +11,8 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date_posted = models.DateTimeField(default=timezone.now)
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)  # Field for image upload
+    video = models.FileField(upload_to='videos/', blank=True, null=True)  # Add this line if you want a video field
+
 
     
     def __str__(self):
